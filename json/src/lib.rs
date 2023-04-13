@@ -15,7 +15,7 @@
 
 #![crate_name = "bitcoincore_rpc_json"]
 #![crate_type = "rlib"]
-
+#![allow(deprecated)]
 pub extern crate bitcoin;
 #[allow(unused)]
 #[macro_use] // `macro_use` is needed for v1.24.0 compilation.
@@ -1047,9 +1047,6 @@ pub struct GetBlockchainInfoResult {
     pub automatic_pruning: Option<bool>,
     /// The target size used by pruning (only present if automatic pruning is enabled)
     pub prune_target_size: Option<u64>,
-    /// Status of softforks in progress
-    #[serde(default)]
-    pub softforks: HashMap<String, Softfork>,
     /// Any network and blockchain warnings.
     pub warnings: String,
 }
