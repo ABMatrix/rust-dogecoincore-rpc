@@ -5,7 +5,3 @@ members = [
     "client",
     "integration_test",
 ]
-
-
-[patch.crates-io]
-bitcoin = { git = "https://github.com/ABMatrix/rust-dogecoin.git" }
