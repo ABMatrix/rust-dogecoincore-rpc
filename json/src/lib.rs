@@ -221,7 +221,7 @@ pub struct GetBlockResult {
     pub difficulty: f64,
     #[serde(with = "crate::serde_hex")]
     pub chainwork: Vec<u8>,
-    pub n_tx: usize,
+    pub n_tx: Option<usize>,
     pub previousblockhash: Option<bitcoin::BlockHash>,
     pub nextblockhash: Option<bitcoin::BlockHash>,
 }
@@ -578,10 +578,10 @@ pub struct GetRawTransactionResultVoutScriptPubKey {
     pub type_: Option<ScriptPubkeyType>,
     // Deprecated in Bitcoin Core 22
     #[serde(default)]
-    pub addresses: Vec<Address>,
+    pub addresses: Vec<String>,
     // Added in Bitcoin Core 22
     #[serde(default)]
-    pub address: Option<Address>,
+    pub address: Option<String>,
 }
 
 impl GetRawTransactionResultVoutScriptPubKey {
